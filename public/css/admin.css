@@ -1,0 +1,71 @@
+body.login {
+  background: no-repeat center url("https://bing.ioliu.cn/v1");
+  background-size: 100% 100%;
+}
+
+body.login .login-panel {
+  width: 450px;
+  margin: 15vh auto 0 auto;
+  box-shadow: 0 10px 60px;
+}
+
+body.login .login-panel .head {
+  background-color: #6699cc;
+  text-align: center;
+  height: 150px;
+  font-size: 32px;
+  color: white;
+}
+
+body.login .login-panel .head .site-name {
+  margin-top: 50px;
+  -webkit-box-reflect: below -4px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.1)));
+  display: inline-block;
+}
+
+body.login .login-panel .head .site-name i {
+  font-size: 32px;
+}
+
+body.login .login-panel .login-form {
+  background-color: white;
+  padding: 15px;
+}
+
+body.login .login-panel .login-btn {
+  width: 100%;
+}
+
+body.login .copyright {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 16px;
+  color: white;
+  text-align: center;
+}
+
+.layui-header .layui-logo a {
+  color: white;
+}
+
+.layui-header .layui-logo a:hover {
+  color: #5FB878;
+}
+
+.layui-body {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+html,
+body {
+  width: 100%;
+}
+
+.layui-form-label.required::before {
+  content: "*";
+  color: red;
+}
+

@@ -1,0 +1,10 @@
+@import "_login.scss";
+@import "_admin.scss";
+
+html,body {
+    width: 100%;
+}
+.layui-form-label.required::before {
+    content: '*';
+    color: red;
+}

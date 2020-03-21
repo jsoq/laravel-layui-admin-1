@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin/layouts/base');
+Route::get('/', 'Admin\ViewController@login')->name('admin.login')->middleware('guest');
+Route::post('admin/api/user/login', 'Admin\UserController@login')->name('api.admin.user.login');
+
+Route::prefix('admin')->namespace('Admin')->middleware('auth:web')->group(function () {
+    Route::get('home', 'ViewController@home')->name('admin.home');
+});
+Route::prefix('admin/api')->namespace('Admin')->middleware('auth:web')->group(function () {
+    Route::post('user/logout', 'UserController@logout')->name('api.admin.user.logout');
 });

@@ -1,0 +1,14 @@
+.layui-header {
+    .layui-logo {
+        a {
+            color: white;
+            &:hover {
+                color: #5FB878;
+            }
+        }
+    }
+}
+
+.layui-body {
+    background-color: rgba(255, 255, 255, 0.1);
+}
