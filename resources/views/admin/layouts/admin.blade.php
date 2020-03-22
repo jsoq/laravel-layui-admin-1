@@ -26,12 +26,12 @@
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree">
                 @foreach(app('admin.menu')->tree() as $menu)
-                <li class="layui-nav-item @if(app('admin.menu')->isSelected($menu)) layui-this layui-nav-itemed @endif">
+                <li class="layui-nav-item @if(app('admin.menu')->isSelected($menu)) layui-nav-itemed @if(count($menu->children) == 0) layui-this @endif @endif">
                     @if(count($menu->children) > 0)
                         <a href="javascript:;"><i class="layui-icon {{ $menu->icon }}"></i> {{ $menu->name }}</a>
-                        <dl class="layui-nav-child @if(app('admin.menu')->isSelected($menu)) layui-this @endif">
+                        <dl class="layui-nav-child">
                         @foreach($menu->children as $child)
-                            <dd><a href="{{ $child->url }}"><i class="layui-icon {{ $child->icon }}"></i> {{ $child->name }}</a></dd>
+                            <dd @if(app('admin.menu')->isSelected($child)) class="layui-this" @endif><a href="{{ $child->url }}"><i class="layui-icon {{ $child->icon }}"></i> {{ $child->name }}</a></dd>
                         @endforeach
                         </dl>
                     @else
