@@ -43,4 +43,11 @@ body.login {
         color: white;
         text-align: center;
     }
+
+    a.icp {
+        color: white;
+        &:hover {
+            color: white;
+        }
+    }
 }

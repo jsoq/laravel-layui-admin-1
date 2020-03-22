@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Config extends Model
 {
     public $timestamps = false;
+
+    public function getKeyName()
+    {
+        return 'key';
+    }
 }

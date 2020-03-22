@@ -27,13 +27,19 @@ class ConfigManager
      * 设置设置项
      * @param $key string 设置项名称
      * @param $value string 目标值
+     * @param bool $forceAdd 是否在配置项不存在时新建
      * @return bool 是否设置成功
      */
-    public function set($key, $value)
+    public function set($key, $value, $forceAdd = false)
     {
         $item = Config::where('key', $key)->first();
         if (empty($item)) {
-            return false;
+            if ($forceAdd) {
+                $item = new Config();
+                $item->key = $key;
+            } else {
+                return false;
+            }
         }
         $item->value = $value;
         return !$item->isDirty() || $item->save();

@@ -6,7 +6,7 @@
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header layui-bg-black">
         <div class="layui-logo">
-            <a href="{{ route('admin.home') }}">Laravel-Layui-Admin</a>
+            <a href="{{ route('admin.home') }}">{{ app('admin.config')->get('site_name', 'Laravel-Layui-Admin') }}</a>
         </div>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">

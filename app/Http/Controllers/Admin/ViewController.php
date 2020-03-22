@@ -16,4 +16,9 @@ class ViewController extends Controller
     {
         return view('admin/views/home');
     }
+
+    public function baseConfig()
+    {
+        return view('admin/views/config/baseConfig');
+    }
 }

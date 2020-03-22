@@ -18,7 +18,9 @@ Route::post('admin/api/user/login', 'Admin\UserController@login')->name('api.adm
 
 Route::prefix('admin')->namespace('Admin')->middleware('auth:web')->group(function () {
     Route::get('home', 'ViewController@home')->name('admin.home');
+    Route::get('config/base', 'ViewController@baseConfig')->name('admin.config.base');
 });
 Route::prefix('admin/api')->namespace('Admin')->middleware('auth:web')->group(function () {
     Route::post('user/logout', 'UserController@logout')->name('api.admin.user.logout');
+    Route::post('config/baseConfig/edit', 'ConfigController@editBaseConfig')->name('api.admin.config.editBaseConfig');
 });

@@ -6,7 +6,7 @@
         <div class="head">
             <div class="site-name">
                 <i class="layui-icon layui-icon-fire"></i>
-                Laravel-Layui-Admin
+                {{ app('admin.config')->get('site_name', 'Laravel-Layui-Admin') }}
             </div>
         </div>
         <div class="layui-form login-form layui-form-pane">
@@ -25,7 +25,7 @@
             <button type="button" class="layui-btn layui-btn-normal login-btn">登录</button>
         </div>
     </div>
-    <div class="copyright">&copy; 2020</div>
+    <div class="copyright">&copy; 2020 chenlijun.com @if(strlen(app('admin.config')->get('icp')) > 0)<a class="icp" href="http://www.beian.miit.gov.cn">{{ app('admin.config')->get('icp') }}</a>@endif</div>
 @endsection
 @push('script')
 <script>
